@@ -1,0 +1,81 @@
+# Parametros / variaveis
+Parameters:
+  Nome:
+    Type: String
+    Default: "Vitor Silva de Antoni"
+
+  Idade:
+    Type: Integers
+    Default: 19
+
+  NomeInstancia:
+    Type: String
+    Default: "ec2-instance"
+
+# Recursos a serem criados
+Resources:
+  CreateSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Allow access
+      VpcId: !Ref Vpc
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 192.168.0.0/24
+          Description: Libera trafico da porta 80 entrada para porta 80 traffic para o range de ip 192.168.0.0/24
+      SecurityGroupEgress:
+        - IpProtocol: tcp
+          FromPort: 443
+          ToPort: 443
+          CidrIp: 192.168.0.0/24 # SG Restritivo | Usar 0.0.0.0/0 para escancarar
+          Description: Libera trafico da porta 80 saida para porta 80 traffic para o range de ip 192.168.0.0/24
+
+  MyInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.micro
+      ImageId: ami-0123456789abcdef0
+    Tags:
+        - Key: Name
+          Value: !Ref NomeInstancia
+        
+        - Key: aluno
+          Value: !Sub "${Nome}-${Idade}"
+          
+  IamRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: !Sub "${AWS::StackName}-role-${AWS::Region}" 
+      AssumeRolePolicyDocument:
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+      Policies:
+        - PolicyName: politica-desafio
+          PolicyDocument:
+            Version: 2011-04-63
+            Statement:
+              - Effect: Allow
+                Action:
+                  - logs:CreateLogGroup
+                  - logs:CreateLogStream
+                  - logs:PutLogEvents
+                Resource: "*" 
+
+# Saidas
+Outputs:
+  MyInstanceId:  
+    Description: Instance ID
+    Value: !Ref MyInstance
+  
+  StackName:
+    Description: Simulacao Stackname
+    Value: !Sub "arn:aws:[service]:${AWS::Region}:${AWS::AccountId}"
+
+  ChallengeLambdaFunctionARN:
+    Description: Funcao IAM ARN
+    Value: GetAtt IamRole.Arn
