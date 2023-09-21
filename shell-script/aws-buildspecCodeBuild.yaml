@@ -1,0 +1,19 @@
+# Sistema operacional: Ubuntu 5.6
+version: 0.2
+phases:
+  install:
+    commands:
+      # Realizar update e upgrade para que o código funcione corretamente
+      - sudo apt-get update
+      - sudo apt-get upgrade -y
+      - sudo apt-get install -y docker.io
+      - sudo apt-get install -y awscli
+
+      # - yum update
+      # - yum upgrade -y
+      # - sudo yum install docker
+      # - sudo yum install awscli
+  build:
+    commands:
+      # Comandos a serem realizados
+      # docker push
