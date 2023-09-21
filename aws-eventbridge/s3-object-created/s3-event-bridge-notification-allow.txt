@@ -1,0 +1,24 @@
+{
+  "source": ["aws.s3"],
+  "detail-type": ["Object Created"],
+  "detail": {
+    "bucket": {
+      "name": ["enter-bucket-name"]
+    },
+      "object": {
+        "key": ["enter-object-key"]
+    }
+  }
+},
+{
+  "source": ["aws.s3"],
+  "detail-type": ["Object Deleted"],
+  "detail": {
+    "bucket": {
+      "name": ["enter-bucket-name"]
+    },
+      "object": {
+        "key": ["enter-object-key"]
+    }
+  }
+}
