@@ -1,0 +1,120 @@
+# Pod
+apiVersion: v1 
+kind: Pod           
+metadata:
+  name: nginx-pod                     # Nome do POD
+  labels:
+    type: frontend
+spec:
+  containers:
+    - name: nginx-container           # Nome do container
+      image: nginx
+
+
+# Replication Controller
+apiVersion: v1 
+kind: ReplicationController        
+metadata:
+  name: apicacao-rc                   # Nome do RC
+  labels:
+    type: frontend
+spec:
+  template:
+    metadata:
+      name: aplicacao-pod
+      labels:
+        type: frontend        
+    spec:
+      containers:
+        - name: aplicacao-container  
+          image: nginx
+  replicas: 2                         # Mantem 2 pods ativos
+
+
+# ReplicaSet
+apiVersion: apps/v1                    # String padrao Kubernets
+kind: ReplicaSet
+metadata:
+  name: apicacao-rs
+  labels:
+    type: frontend
+spec:
+  template:
+    metadata:
+      name: aplicacao-pod
+      labels:
+        type: frontend        
+    spec:
+      containers:
+        - name: aplicacao-container
+          image: nginx
+  replicas: 2
+  selector:                             # Seletor de tags/type
+    matchLabels:
+      type: frontend
+
+
+# Service NodePort - Servico publico
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-svc
+spec:
+  selector:
+    type: frontend
+  ports:
+    - name: http
+      targetPort: 80
+      port: 80
+      nodePort: 30080
+  type: NodePort
+
+# Service NodePort - Servico privado
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-svc
+spec:
+  selector:
+    type: frontend
+  ports:
+    - name: http
+      port: 80
+  type: ClusterIp
+
+# Service NodePort - Servico balanceador de carga
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-svc
+spec:
+  selector:
+    type: frontend
+  ports:
+    - name: http
+      targetPort: 80
+      port: 80
+  type: LoadBalancer
+
+
+# Pratica RS
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: frontend-rs
+  labels:
+    app: frontend
+spec:
+  template:
+    metadata:
+      name: aplicacao
+      labels:
+        type: aplicacao
+    spec:
+      containers:
+        - name: aplicacao-container
+          image: nginx
+  selector:
+    matchLabels:
+      type: aplicacao
+  replicas: 2
