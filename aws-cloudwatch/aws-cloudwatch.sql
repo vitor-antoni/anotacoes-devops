@@ -17,5 +17,5 @@ Other logs:
 
 /* Consultando um log de auditoria do RDS em que nome da tabela é carros */
 fields @message
-| filter @message like "carros"
+| filter @message like "carros" and @message not like "2001"
 | limit 5
