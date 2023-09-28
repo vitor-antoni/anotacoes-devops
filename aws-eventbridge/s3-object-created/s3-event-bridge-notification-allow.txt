@@ -1,3 +1,5 @@
+https://docs.aws.amazon.com/AmazonS3/latest/userguide/EventBridge.html
+
 {
   "source": ["aws.s3"],
   "detail-type": ["Object Created"],
