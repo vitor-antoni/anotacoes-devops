@@ -16,5 +16,7 @@ umount /dev/disc /directory
 
 ## Para anexar um volume EBS e mantê-lo montado
 ## sempre que a instância iniciar.
-# Para saber o UUID do disco --> blkid /dev/<disc>
-UUID=<volumeUUID> /mnt/ebs ext4 defaults 0 2
+
+blkid /dev/<disc>      # UUID do disco
+
+echo "UUID=<volumeUUID> /mnt/ebs ext4 defaults 0 2" >> /etc/fstab
