@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Arquivo SSH
+chmod 600 {keyName}
+
 cat /etc/passwd     ## exibe os usuários do sistema
 cat /etc/group      ## exibe os grupos do sistema
 cat /etc/shadow     ## exibe as senhas
