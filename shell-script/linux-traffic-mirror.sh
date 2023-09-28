@@ -6,9 +6,11 @@
 
 # Porta UDP 4789
 
-## Comandos para realizar na instância de monitoramento
-# ip_privado da instância de monitoramento
+## Instância de monitoramento
+# ip_privado da instância source
 # 1904 eh o identificador da vlan
+# tomar cuidados com portas e protocolos de segurança e filtros
+
 ip link add vxlan0 type vxlan id 1904 dev eth0 local {ip_privado} dstport 4789
 ip link set vxlan0 up
 tcpdump -lnvXi vxlan0 icmp
