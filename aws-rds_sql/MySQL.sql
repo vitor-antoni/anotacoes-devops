@@ -1,29 +1,35 @@
--- Criar banco
-create database <database_name>;
-
--- Criar usuário
-create user '<username>'@'%' identified by '<password>';
-
--- Conceder privilégios
-grant all privileges on <databaseName>.<table_name> to <username>@<hostname>;
-
--- Revogar privilégios
-revoke all privileges from <username>@<hostname>;
-
--- Excluir usuário
-drop user <username>@<hostname>
-
--- Criar tabela
-create table <table_name>(id int primary key auto_increment, <fields>);
-
--- Inserir dados
-insert into <table_name>(<fields>) values(<values>);
-
 -- MySQL Dump
 mysqldump <database-name> -h <hostname> -u <username> -p > arquivo.sql
 
 -- MySQL Restore
 mysql -h <hostname> -u <username> -p <dabatase-name> < arquivo.sql
 
+-- Criar banco
+CREATE database <database_name>;
+
+-- Criar tabela
+CREATE TABLE <table_name>(id int primary key auto_increment, <fields>);
+
+-- Inserir dados
+INSERT INTO <table_name>(<fields>) VALUES(<values>);
+
 -- Altera dados
-update <table_name> set <column>=<field> where id=<id>
+UPDATE <table_name> SET <column>=<field> WHERE id=<id>
+
+-- Criar novas colunas
+ALTER TABLE <table_name> ADD <newColumn> INT AFTER <someColumn>;
+
+-- Criar usuário
+CREATE USER '<username>'@'%' identified BY '<password>';
+
+-- Conceder privilégios
+GRANT all privileges ON <databaseName>.<table_name> TO <username>@<hostname>;
+
+-- Revogar privilégios
+REVOKE all privileges FROM <username>@<hostname>;
+
+-- Excluir usuário
+DROP USER <username>@<hostname>
+
+-- ======= PRIVILEGIOS ======= --
+[ ALL PRIVILEGES | ALTER | ALTER | CREATE | CREATE USER | CREATE VIEW | DELETE | DROP | EXECUTE | INSERT | SELECT | SHOW DATABASES | UPDATE | ]
