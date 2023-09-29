@@ -27,5 +27,5 @@ GROUP BY("estado");
 /* Consultas AWS Athena Integracao de DataSources */
 select *
 from "Datasource1"."database"."table" as t1
-join "Datasource2"."database"."table" as t2 ON cast(t2.policyid as integer)=t1.policyid
+join "Datasource2"."database"."table" as t2 ON cast(t2.{CommonColumnName} as integer)=t1.{CommonColumnName}
 where {conditions}
