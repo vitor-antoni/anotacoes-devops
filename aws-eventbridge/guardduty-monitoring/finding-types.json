@@ -1,4 +1,5 @@
 {
+  "Documentacao":"https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-active.html",
   "Amazon S3": [
     "Discovery:S3/AnomalousBehavior",
     "Discovery:S3/MaliciousIPCaller",
