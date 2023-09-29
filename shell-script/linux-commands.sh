@@ -11,7 +11,7 @@ yum update                # Atualiza o repositório
 yum upgrade -y            # Atualiza as packages
 
 # Encontrar arquivo e excluir
-find / -name {fileName} | xargs rm -rf
+find / -name {fileName} | xargs rm -rf *php
 
 # Encontrrar palavra em arquivo recursivamente
 grep -niR {diretorio}
