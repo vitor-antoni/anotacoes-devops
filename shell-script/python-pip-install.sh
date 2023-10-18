@@ -11,5 +11,8 @@ py get-pip.py
 # Para baixar bibliotecas
 pip install {libraryName}
 
+# Para atualizar o pip
+python -m pip install --upgrade pip
+
 # Para Windows
 py -m pip install {librabryName}
