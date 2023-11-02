@@ -19,7 +19,7 @@ sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-config-wizard
 # no - 2
 # no - 2
 
-# Copiar o JSON Output para os arquivos nos arquivos JSON nos diretórios abaixo:
+# Copiar o JSON Output para os arquivos JSON nos diretórios abaixo:
 /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.json
 /opt/aws/amazon-cloudwatch-agent/bin/config.json
 
