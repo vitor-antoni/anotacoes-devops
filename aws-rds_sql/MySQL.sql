@@ -31,5 +31,11 @@ REVOKE all privileges FROM <username>@<hostname>;
 -- Excluir usuário
 DROP USER <username>@<hostname>
 
+-- Excluir tabela
+DROP TABLE {table_name}
+
+-- Excluir linha
+DELETE FROM {table_name} WHERE {condition}
+
 -- ======= PRIVILEGIOS ======= --
 [ ALL PRIVILEGES | ALTER | ALTER | CREATE | CREATE USER | CREATE VIEW | DELETE | DROP | EXECUTE | INSERT | SELECT | SHOW DATABASES | UPDATE | ]
