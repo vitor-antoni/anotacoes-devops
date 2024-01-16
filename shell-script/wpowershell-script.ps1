@@ -3,4 +3,4 @@ route print | select-string <ip>
 
 
 # Resolver um DNS no powershell
-Resolve-DnsName -Name <dns>
+resolve-dnsName -Name <dns_name>
