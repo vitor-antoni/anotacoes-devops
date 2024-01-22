@@ -4,7 +4,14 @@
 alias {word}={wordToRefer}
 alias k8=kubectl
 
+# APT
+apt-get install {packageName} 
+apt info {packageName} 
+apt update
+
+
 # YUM
+yum install {packageName} 
 yum info {packageName}    # Informações sobre packages
 yum repolist              # Apresenta os repositórios existentes.
 yum update                # Atualiza o repositório
@@ -18,3 +25,7 @@ grep -niR {diretorio}
 
 # Acha palavra em arquivo ou lista
 amazon-linux-extras list | grep {php}
+
+# Reiniciar o ntp e realizar o sync de horario e data
+sudo /etc/init.d/ntp stop
+sudo /etc/init.d/ntp start
