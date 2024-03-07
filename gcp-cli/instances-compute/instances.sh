@@ -3,7 +3,7 @@
 # Para criar uma máquina a partir de uma Imagem de máquina em outro projeto
 # Útil para cenários de DR (Dister Recovery)
 # Ref https://cloud.google.com/sdk/gcloud/reference/compute/instances/create
-gcloud compute instances create dcg01-test \
+gcloud compute instances create {vmName} \
 --project={project} \
 --zone={zone} \
 --source-machine-image=projects/{project}/global/machineImages/{amiID} \
