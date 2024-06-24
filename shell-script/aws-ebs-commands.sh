@@ -2,6 +2,7 @@
 
 ## Para exibir todos os discos MONTADOS
 df -h
+lsblk
 
 ## Para exibir todos as partições existentes
 fdisk -l
