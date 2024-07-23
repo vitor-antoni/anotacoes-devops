@@ -8,3 +8,6 @@ nslookup <dns_name>
 
 # Identificar quais as portas estão rodando no SO do Windows
 netstat -ano | selec-string <port> 
+
+# Cópia de arquivos via SCP
+scp -o ProxyJump=<user>@<host> user@<targetServer>:/target/dir/file /local/dir
