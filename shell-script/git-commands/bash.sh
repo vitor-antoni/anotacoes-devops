@@ -9,3 +9,4 @@ git checkout {branchName}                             # Troca de branch
 git checkout -b {newBranchName}                       # Cria branch nova
 git checkout {branchName} -- {workingFileDirectory}   # Descarta alterações e puxa o mesmo arquivo de outra Branch
 git cherry-pick {commitId}                            # Baixa as alterações de um commit
+git rebase -i HEAD~<numberOfCommits>                  # Altera título do commit antes de entrar na Master.
