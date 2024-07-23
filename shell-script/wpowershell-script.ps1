@@ -3,4 +3,8 @@ route print | select-string <ip>
 
 
 # Resolver um DNS no powershell
-resolve-dnsName -Name <dns_name>
+resolve-dnsName <dns_name>
+nslookup <dns_name>
+
+# Identificar quais as portas estão rodando no SO do Windows
+netstat -ano | selec-string <port> 
