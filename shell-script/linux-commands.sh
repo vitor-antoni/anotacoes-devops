@@ -29,3 +29,6 @@ amazon-linux-extras list | grep {php}
 # Reiniciar o ntp e realizar o sync de horario e data
 sudo /etc/init.d/ntp stop
 sudo /etc/init.d/ntp start
+
+# Para alterar um palavra dentro de um arquivo
+sed -i "s/{palavraAtual/novaPalavra/g" <nomeDoArquivo>
