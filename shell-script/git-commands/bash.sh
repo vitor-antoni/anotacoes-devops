@@ -1,9 +1,9 @@
 #!/bin/bash
 
-git log     # Log 
-git pull    # Baixa atualizações
-git stash   # Salva temporariamente alterações
-git pop     # Recupera alterações salvas
+git log        # Log 
+git pull       # Baixa atualizações
+git stash      # Salva temporariamente alterações
+git stash pop  # Recupera alterações salvas
 
 git add {modifiedFileName}                            # Adiciona o arquivo ao commit
 git commit -m 'Commit message'                        # Cria o commit com mensagem
