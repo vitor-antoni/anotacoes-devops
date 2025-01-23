@@ -15,3 +15,6 @@ git checkout {branchName} -- {workingFileDirectory}   # Descarta alterações e 
 
 git cherry-pick {commitId}                            # Baixa as alterações de um commit
 git rebase -i HEAD~<numberOfCommits>                  # Altera título do commit antes de entrar na Master.
+
+git fetch origin                                      # Buscar as alterações em um repositório remoto
+git rebase origin/master                              # Aplica as alterações do repositório remoto na branch atual
