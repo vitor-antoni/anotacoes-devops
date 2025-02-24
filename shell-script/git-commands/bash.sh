@@ -7,6 +7,8 @@ git stash pop  # Recupera alterações salvas
 
 git add {modifiedFileName}                            # Adiciona o arquivo ao commit
 git commit -m 'Commit message'                        # Cria o commit com mensagem
+git commit --amend                                    # Reescrever commit
+git reset                                             # Cancela a adição dos arquivos
 git push --set-upstream origin {currentBranchName}    # Envia atualizações
 
 git checkout {branchName}                             # Troca de branch
