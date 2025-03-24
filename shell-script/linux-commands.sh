@@ -9,6 +9,8 @@ apt-get install {packageName}
 apt info {packageName} 
 apt update
 
+# Printa todas as rotas estáticas do Sistema Operacional / SO
+ip route show | grep <cidr_range>
 
 # YUM
 yum install {packageName} 
