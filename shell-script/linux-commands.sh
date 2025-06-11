@@ -12,6 +12,9 @@ apt update
 # Printa todas as rotas estáticas do Sistema Operacional / SO
 ip route show | grep <cidr_range>
 
+# Obter IP público da instância
+curl meuip.com/api/meuip.php
+
 # YUM
 yum install {packageName} 
 yum info {packageName}    # Informações sobre packages
