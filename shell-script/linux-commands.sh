@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Modificar terminal
+vim ~/.bash_profile
+
 # Criar alias
 alias {word}={wordToRefer}
 alias k8=kubectl
@@ -36,4 +39,4 @@ sudo /etc/init.d/ntp stop
 sudo /etc/init.d/ntp start
 
 # Para alterar um palavra dentro de um arquivo
-sed -i "s/{palavraAtual/novaPalavra/g" <nomeDoArquivo>
+sed -i "s/{palavraAtual}/{novaPalavra}/g" <nomeDoArquivo>
