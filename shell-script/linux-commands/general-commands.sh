@@ -38,8 +38,9 @@ amazon-linux-extras list | grep {php}
 sudo /etc/init.d/ntp stop
 sudo /etc/init.d/ntp start
 
-# Compactar um arquivo
+# Compactar e descompactar um arquivo
 zip -r app.zip app/
+unzip app.zip -d <directory>
 
 # Para alterar um palavra dentro de um arquivo
 sed -i "s/{palavraAtual}/{novaPalavra}/g" <nomeDoArquivo>
