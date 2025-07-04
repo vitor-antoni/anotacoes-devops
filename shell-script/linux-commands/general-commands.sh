@@ -47,4 +47,7 @@ sed -i "s/{palavraAtual}/{novaPalavra}/g" <nomeDoArquivo>
 
 # Para redimensionar volumes
 lsblk      # Listagem de volumes
-growpart <nome_do_disco> <id_da_particao>
+df -T      # Para obter o tipo de volume
+xfs_growfs     # Redimensionar voluems do tipo xfs
+growpart <nome_do_disco> <id_da_particao>    # Para aumentar o volume
+
