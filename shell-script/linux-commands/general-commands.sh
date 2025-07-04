@@ -44,3 +44,7 @@ unzip app.zip -d <directory>
 
 # Para alterar um palavra dentro de um arquivo
 sed -i "s/{palavraAtual}/{novaPalavra}/g" <nomeDoArquivo>
+
+# Para redimensionar volumes
+lsblk      # Listagem de volumes
+growpart <nome_do_disco> <id_da_particao>
