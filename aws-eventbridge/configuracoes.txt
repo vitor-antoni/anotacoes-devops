@@ -1,0 +1,7 @@
+Targets de uma scheduler ou rule do AWS EventBridge são chamadas de APIs.
+Contudo, se a chamada de API não for uma configurada pela própria AWS, precisaremos configurar uma especificando um Payload.
+
+Este Payload trata-se de um texto JSON escrito com PascoalCase.
+O Payload é espelho direto da estrutura da chamada de API (SDK/CLI) daquele serviço específico.
+
+  Exemplo de estrutura de chamada de API do ECS: https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html
