@@ -37,5 +37,8 @@ DROP TABLE {table_name}
 -- Excluir linha
 DELETE FROM {table_name} WHERE {condition}
 
+--- Obter tipo de dados de colunas
+DESCRIBE {table_name}
+
 -- ======= PRIVILEGIOS ======= --
 [ ALL PRIVILEGES | ALTER | ALTER | CREATE | CREATE USER | CREATE VIEW | DELETE | DROP | EXECUTE | INSERT | SELECT | SHOW DATABASES | UPDATE | ]
